@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self test];
+    
     
     
 }
@@ -35,24 +37,73 @@
 - (IBAction)searchButtonPressed:(id)sender{
     NSString *encodedString = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *jsonEscapeString = @"%2Fjson";
-    NSString *searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/teams/14?_accept=application%@&apikey=%@", jsonEscapeString, espnAPIKey];
+    self.searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/teams/14?_accept=application%@&apikey=%@", jsonEscapeString, espnAPIKey];
     
     
-    NSURL *url = [NSURL URLWithString:searchString];
-    self.request = [NSURLRequest requestWithURL:url];
+    self.url = [NSURL URLWithString:self.searchString];
+    self.request = [NSURLRequest requestWithURL:self.url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:self.request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSDictionary *results = JSON;
-        NSLog(@"%@", results);
+        self.results = JSON;
+        //NSLog(@"%@", self.results);
+        self.resultsArray = [self.results objectForKey:@"sports"];
+        NSDictionary *stepOne = [self.resultsArray objectAtIndex:0];
+        NSArray *stepTwo = [stepOne objectForKey:@"leagues"];
+        NSArray *stepThree = [[stepTwo objectAtIndex:0]objectForKey:@"teams"];
+        self.teamID = [[stepThree objectAtIndex:0]objectForKey:@"id"];
+        NSArray *stepFour = [[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"];
+        self.espnNewsArray = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"] objectForKey:@"news"] objectForKey:@"href"];
+        self.espnNotesArray = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"] objectForKey:@"notes"] objectForKey:@"href"];
+        self.espnTeamsArray = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"] objectForKey:@"teams"] objectForKey:@"href"];
         
+        self.espnNewsString = [NSString stringWithFormat:@"%@", self.espnNewsArray];
+        self.espnNotesString = [NSString stringWithFormat:@"%@", self.self.espnNotesArray];
+        self.espnTeamsString = [NSString stringWithFormat:@"%@", self.espnTeamsArray];
+        
+        
+        
+
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONfinished" object:nil];
+        
+
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         //
     }];
     [operation start];
+   
+    
     
     
 }
+
+-(void)test{
+    NSNotificationCenter *jsonNotification = [NSNotificationCenter defaultCenter];
+    [jsonNotification addObserverForName:@"JSONfinished" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSLog(@"%@", self.espnNewsString);
+        NSLog(@"%@", self.espnNotesString);
+        NSLog(@"%@", self.espnTeamsString);
+        
+        NSString *appendingString = [NSString stringWithFormat:@"?apikey=%@", espnAPIKey];
+        
+        NSURL *url = [NSURL URLWithString:[self.espnTeamsString stringByAppendingString:appendingString]];
+        NSLog(@"%@", url);
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            NSLog(@"%@", JSON);
+            
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            NSLog(@"Error in void test");
+        }];
+        
+        [operation start];
+
+    }];
+}
+
 
 
 @end
