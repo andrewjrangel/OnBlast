@@ -15,13 +15,20 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface MainViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) IBOutlet UITextField *playerTextField;
+
 @property (weak, nonatomic) IBOutlet UIImageView *onBlastLogo;
+@property (weak, nonatomic) IBOutlet UIImageView *teamLogo;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *teamNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamAbbreviationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *leagueLabel;
-@property (strong, nonatomic) IBOutlet UILabel *linksLabel;
+@property (strong, nonatomic) IBOutlet UILabel *linksLabel1;
+@property (strong, nonatomic) IBOutlet UILabel *linksLabel2;
+@property (strong, nonatomic) IBOutlet UILabel *linksLabel3;
+
 
 @property (strong, nonatomic) NSURLRequest *request;
 @property (strong, nonatomic) NSDictionary *results;
@@ -44,12 +51,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) NSString *teamName;
 
 
-
-
-
-
-
-
 - (IBAction)searchButtonPressed:(id)sender;
+- (IBAction)playerButtonPressed:(id)sender;
 
 @end
