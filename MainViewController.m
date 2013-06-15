@@ -61,6 +61,9 @@
         self.espnTeamsString = [NSString stringWithFormat:@"%@", self.espnTeamsArray];
         
         
+        NSLog(@"%@", stepThree);
+        
+        
         
 
         [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONfinished" object:nil];
@@ -80,19 +83,19 @@
 -(void)test{
     NSNotificationCenter *jsonNotification = [NSNotificationCenter defaultCenter];
     [jsonNotification addObserverForName:@"JSONfinished" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        NSLog(@"%@", self.espnNewsString);
-        NSLog(@"%@", self.espnNotesString);
-        NSLog(@"%@", self.espnTeamsString);
+//        NSLog(@"%@", self.espnNewsString);
+//        NSLog(@"%@", self.espnNotesString);
+//        NSLog(@"%@", self.espnTeamsString);
         
         NSString *appendingString = [NSString stringWithFormat:@"?apikey=%@", espnAPIKey];
         
         NSURL *url = [NSURL URLWithString:[self.espnTeamsString stringByAppendingString:appendingString]];
-        NSLog(@"%@", url);
+        //NSLog(@"%@", url);
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            NSLog(@"%@", JSON);
+           // NSLog(@"%@", JSON);
             
             
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {

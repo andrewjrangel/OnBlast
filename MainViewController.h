@@ -12,6 +12,13 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *onBlastLogo;
+
+@property (strong, nonatomic) IBOutlet UILabel *teamNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *teamLocationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *teamAbbreviationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *leagueLabel;
+@property (strong, nonatomic) IBOutlet UILabel *linksLabel;
+
 @property (strong, nonatomic) NSURLRequest *request;
 @property (strong, nonatomic) NSDictionary *results;
 @property (strong, nonatomic) NSString *searchString;
@@ -26,6 +33,17 @@
 @property (strong, nonatomic) NSArray *espnNewsArray;
 @property (strong, nonatomic) NSArray *espnNotesArray;
 @property (strong, nonatomic) NSArray *espnTeamsArray;
+
+@property (strong, nonatomic) NSString *teamColor;
+@property (strong, nonatomic) NSString *teamAbbreviation;
+@property (strong, nonatomic) NSString *teamLocation;
+@property (strong, nonatomic) NSString *teamName;
+
+
+
+
+
+
 
 
 - (IBAction)searchButtonPressed:(id)sender;
