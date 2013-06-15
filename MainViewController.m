@@ -14,7 +14,9 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController{
+    int teamColor;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +39,7 @@
 - (IBAction)searchButtonPressed:(id)sender{
     NSString *encodedString = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSString *jsonEscapeString = @"%2Fjson";
-    self.searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/teams/14?_accept=application%@&apikey=%@", jsonEscapeString, espnAPIKey];
+    self.searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/teams/2?_accept=application%@&apikey=%@", jsonEscapeString, espnAPIKey];
     
     
     self.url = [NSURL URLWithString:self.searchString];
@@ -61,10 +63,15 @@
         self.espnTeamsString = [NSString stringWithFormat:@"%@", self.espnTeamsArray];
         
         
-        NSLog(@"%@", stepThree);
+        //NSLog(@"%@", stepThree);
         
+        self.teamColor = [[stepThree objectAtIndex:0]objectForKey:@"color"];
+        self.teamLocation = [[stepThree objectAtIndex:0]objectForKey:@"location"];
+        self.teamName = [[stepThree objectAtIndex:0]objectForKey:@"name"];
         
+    
         
+
 
         [[NSNotificationCenter defaultCenter]postNotificationName:@"JSONfinished" object:nil];
         
@@ -87,22 +94,63 @@
 //        NSLog(@"%@", self.espnNotesString);
 //        NSLog(@"%@", self.espnTeamsString);
         
-        NSString *appendingString = [NSString stringWithFormat:@"?apikey=%@", espnAPIKey];
+        NSLog(@"%@", self.teamName);
+        NSLog(@"%@", self.teamColor);
+        NSLog(@"%@", self.teamLocation);
         
-        NSURL *url = [NSURL URLWithString:[self.espnTeamsString stringByAppendingString:appendingString]];
-        //NSLog(@"%@", url);
+        self.teamLocationLabel.text = self.teamLocation;
+        self.teamNameLabel.text = self.teamName;
         
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-           // NSLog(@"%@", JSON);
+        if ([self.teamName isEqualToString:@"Bucks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x003813);
             
+        } else if ([self.teamName isEqualToString:@"Heat"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
             
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            NSLog(@"Error in void test");
-        }];
-        
-        [operation start];
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Celtics"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x006532);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        } else if ([self.teamName isEqualToString:@"Hawks"]) {
+            self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
+            
+        }
+     
 
     }];
 }
