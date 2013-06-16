@@ -9,6 +9,10 @@
 #import "MainViewController.h"
 #import "AFNetworking.h"
 #define espnAPIKey @"d2b4nv43v29nvzthmdntra2x"
+#import "Twilinator.h"
+#define accountSID @"AC4be7b47606401ee1b19d02fbf90cf503"
+#import "ASIFormDataRequest.h"
+#import "SBJSON.h"
 
 @interface MainViewController ()
 
@@ -41,7 +45,7 @@
     [self.infoButton setTitle:@"ESPN News" forState:UIControlStateNormal];
     [self.view addSubview:self.infoButton];
     
-    switchButtonOff = YES;
+//    switchButtonOff = YES;
 }
 
 
@@ -378,8 +382,35 @@
 }
 
 - (IBAction)switchButtonPressed:(id)sender{
+    if (switchButtonOff == YES) {
+        [self.playerSearchButton setHidden:YES];
+        [self.playerTextField setHidden:YES];
+        [self.switchButton setTitle:@"Off" forState:UIControlStateNormal];
+        switchButtonOff = FALSE;
+        
+    } else if (switchButtonOff == FALSE) {
+        [self.playerSearchButton setHidden:NO];
+        [self.playerTextField setHidden:NO];
+        [self.switchButton setTitle:@"On" forState:UIControlStateNormal];
+        switchButtonOff = TRUE;
+    }
     
-    
+        
+//        if (fCheck == NO && cCheck == NO) {
+//            [centigradeButton setSelected:YES];
+//            cCheck = TRUE;
+//            [fahrenheitButton setSelected:NO];
+//            fCheck = NO;
+//        } else if (fCheck == TRUE){
+//            [centigradeButton setSelected:YES];
+//            cCheck = TRUE;
+//            [fahrenheitButton setSelected:NO];
+//            fCheck = NO;
+//        } else {
+//            [centigradeButton setSelected:YES];
+//            cCheck = TRUE;
+//            fCheck = NO;
+//        }
 }
 
 - (IBAction)playerButtonPressed:(id)sender{
@@ -444,5 +475,38 @@
 
 
 }
+
+- (IBAction)onBlastButtonPressed:(id)sender{
+    [self.onBlastTextField resignFirstResponder];
+    
+    __block ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.twilio.com/2010-04-01/Accounts/%@/SMS/Messages.json", accountSID]]];
+    
+    [request setUsername:@"AC4be7b47606401ee1b19d02fbf90cf503"];
+    [request setPassword:@"bca2e53769fca182d4fd4f03250654d8"];
+    
+    [request addPostValue:@"19138711246" forKey:@"From"];
+    [request addPostValue:@"19139541845" forKey:@"To"];
+    [request addPostValue:self.onBlastTextField.text forKey:@"Body"];
+    
+    [request setCompletionBlock:^(){
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+//        NSDictionary *responseDict = [parser objectWithString:request.responseString];
+//        handler( responseDict, nil );
+        
+    }];
+    
+    [request setFailedBlock:^(){
+//        handler( nil, request.error );
+    }];
+    
+    [request startAsynchronous];
+    self.onBlastTextField.text = @"";
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    return (newLength > 160) ? NO : YES;
+}
+
 
 @end

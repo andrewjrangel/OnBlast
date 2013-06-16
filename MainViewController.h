@@ -16,6 +16,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) IBOutlet UITextField *playerTextField;
+@property (strong, nonatomic) IBOutlet UITextField *onBlastTextField;
 
 @property (weak, nonatomic) IBOutlet UIImageView *onBlastLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *teamLogo;
@@ -60,4 +61,5 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (IBAction)searchButtonPressed:(id)sender;
 - (IBAction)playerButtonPressed:(id)sender;
 - (IBAction)switchButtonPressed:(id)sender;
+- (IBAction)onBlastButtonPressed:(id)sender;
 @end
