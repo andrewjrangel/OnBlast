@@ -37,15 +37,19 @@
     [super viewDidLoad];
     [self test];
     [self playerMethod];
-    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    [self.infoButton setFrame:CGRectMake(740, 340, 73, 44)];
+    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [self.infoButton setFrame:CGRectMake(937, 268, 73, 44)];
     [self.infoButton setBackgroundColor:[UIColor clearColor]];
     [self.infoButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
     [self.infoButton addTarget:self action:@selector(espnNews) forControlEvents:UIControlEventTouchUpInside];
-    [self.infoButton setTitle:@"ESPN News" forState:UIControlStateNormal];
+    //[self.infoButton setTitle:@"info" forState:UIControlStateNormal];
     [self.view addSubview:self.infoButton];
     
-//    switchButtonOff = YES;
+    [self.ppgLabel setHidden:YES];
+    [self.rpgLabel setHidden:YES];
+    [self.apgLabel setHidden:YES];
+    [self.paLabel setHidden:YES];
+    
 }
 
 
@@ -160,7 +164,6 @@
    
     
     
-    
 }
 
 -(void)test{
@@ -182,28 +185,44 @@
             self.teamLocationLabel.textColor = UIColorFromRGB(0x003813);
             UIImage* image = [UIImage imageNamed: @"bucks.gif"];
             [self.teamLogo setImage:image];
-
+            
+            self.standingsLabel.text = @"12th";
+            self.winsLabel.text = @"5th";
+            self.lossesLabel.text = @"9th";
+            self.pctLabel.text = @"20th";
             
         } else if ([self.teamName isEqualToString:@"Heat"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x000000);
-            UIImage* image = [UIImage imageNamed: @"heat.gif"];
+            UIImage* image = [UIImage imageNamed: @"heat.png"];
             [self.teamLogo setImage:image];
 
+            self.standingsLabel.text = @"5th";
+            self.winsLabel.text = @"30th";
+            self.lossesLabel.text = @"7th";
+            self.pctLabel.text = @"5th";
             
         } else if ([self.teamName isEqualToString:@"Hawks"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x002B5C);
-            UIImage* image = [UIImage imageNamed: @"hawks.gif"];
+            UIImage* image = [UIImage imageNamed: @"atlanta.gif"];
             [self.teamLogo setImage:image];
 
+            self.standingsLabel.text = @"14th";
+            self.winsLabel.text = @"23rd";
+            self.lossesLabel.text = @"2nd";
+            self.pctLabel.text = @"13th";
             
         } else if ([self.teamName isEqualToString:@"Celtics"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x006532);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x006532);
-            UIImage* image = [UIImage imageNamed: @"celtics.gif"];
+            UIImage* image = [UIImage imageNamed: @"celtics.png"];
             [self.teamLogo setImage:image];
 
+            self.standingsLabel.text = @"18th";
+            self.winsLabel.text = @"29th";
+            self.lossesLabel.text = @"12th";
+            self.pctLabel.text = @"12th";
             
         } else if ([self.teamName isEqualToString:@"Pelicans"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0093B1);
@@ -211,49 +230,87 @@
             UIImage* image = [UIImage imageNamed: @"pelicans.png"];
             [self.teamLogo setImage:image];
 
+            self.standingsLabel.text = @"25th";
+            self.winsLabel.text = @"17th";
+            self.lossesLabel.text = @"23rd";
+            self.pctLabel.text = @"14th";
             
         } else if ([self.teamName isEqualToString:@"Bulls"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x000000);
-            UIImage* image = [UIImage imageNamed: @"bulls.gif"];
+            UIImage* image = [UIImage imageNamed: @"bulls.png"];
             [self.teamLogo setImage:image];
 
+            self.standingsLabel.text = @"29th";
+            self.winsLabel.text = @"8th";
+            self.lossesLabel.text = @"8th";
+            self.pctLabel.text = @"3rd";
             
         } else if ([self.teamName isEqualToString:@"Cavaliers"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x061642);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x061642);
-            UIImage* image = [UIImage imageNamed: @"cavaliers.gif"];
+            UIImage* image = [UIImage imageNamed: @"cavaliers.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"19th";
+            self.winsLabel.text = @"22nd";
+            self.lossesLabel.text = @"26th";
+            self.pctLabel.text = @"25th";
             
         } else if ([self.teamName isEqualToString:@"Mavericks"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0C479D);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x0C479D);
-            UIImage* image = [UIImage imageNamed: @"mavericks.gif"];
+            UIImage* image = [UIImage imageNamed: @"mavericks.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"8th";
+            self.winsLabel.text = @"16th";
+            self.lossesLabel.text = @"5th";
+            self.pctLabel.text = @"27th";
             
         } else if ([self.teamName isEqualToString:@"Nuggets"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0860A8);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x0860A8);
-            UIImage* image = [UIImage imageNamed: @"denver.gif"];
+            UIImage* image = [UIImage imageNamed: @"nuggets.gif"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"1st";
+            self.winsLabel.text = @"2nd";
+            self.lossesLabel.text = @"3rd";
+            self.pctLabel.text = @"23rd";
             
         } else if ([self.teamName isEqualToString:@"Pistons"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xFA002C);
             self.teamLocationLabel.textColor = UIColorFromRGB(0xFA002C);
-            UIImage* image = [UIImage imageNamed: @"detroit.gif"];
+            UIImage* image = [UIImage imageNamed: @"pistons.gif"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"22nd";
+            self.winsLabel.text = @"13th";
+            self.lossesLabel.text = @"22nd";
+            self.pctLabel.text = @"18th";
             
         } else if ([self.teamName isEqualToString:@"Warriors"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x00275D);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x00275D);
-            UIImage* image = [UIImage imageNamed: @"goldenState.gif"];
+            UIImage* image = [UIImage imageNamed: @"warriors.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"7th";
+            self.winsLabel.text = @"3rd";
+            self.lossesLabel.text = @"15th";
+            self.pctLabel.text = @"19th";
             
         } else if ([self.teamName isEqualToString:@"Rockets"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xD40026);
             self.teamLocationLabel.textColor = UIColorFromRGB(0xD40026);
-            UIImage* image = [UIImage imageNamed: @"houston.gif"];
+            UIImage* image = [UIImage imageNamed: @"rockets.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"2nd";
+            self.winsLabel.text = @"7th";
+            self.lossesLabel.text = @"6th";
+            self.pctLabel.text = @"28th";
             
         } else if ([self.teamName isEqualToString:@"Pacers"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x061642);
@@ -261,11 +318,21 @@
             UIImage* image = [UIImage imageNamed: @"pacers.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"23rd";
+            self.winsLabel.text = @"1st";
+            self.lossesLabel.text = @"28th";
+            self.pctLabel.text = @"2nd";
+            
         } else if ([self.teamName isEqualToString:@"Clippers"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xFA0028);
             self.teamLocationLabel.textColor = UIColorFromRGB(0xFA0028);
             UIImage* image = [UIImage imageNamed: @"clippers.gif"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"9th";
+            self.winsLabel.text = @"18th";
+            self.lossesLabel.text = @"4th";
+            self.pctLabel.text = @"4th";
             
         } else if ([self.teamName isEqualToString:@"Hawks"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x002B5C);
@@ -273,17 +340,32 @@
             UIImage* image = [UIImage imageNamed: @"atlanta.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"14th";
+            self.winsLabel.text = @"23rd";
+            self.lossesLabel.text = @"2nd";
+            self.pctLabel.text = @"13th";
+            
         } else if ([self.teamName isEqualToString:@"Lakers"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x542582);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x542582);
-            UIImage* image = [UIImage imageNamed: @"lakers.gif"];
+            UIImage* image = [UIImage imageNamed: @"lakers.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"6th";
+            self.winsLabel.text = @"4th";
+            self.lossesLabel.text = @"17th";
+            self.pctLabel.text = @"22nd";
             
         }else if ([self.teamName isEqualToString:@"Heat"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x000000);
-            UIImage* image = [UIImage imageNamed: @"heat.gif"];
+            UIImage* image = [UIImage imageNamed: @"heat.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"5th";
+            self.winsLabel.text = @"30th";
+            self.lossesLabel.text = @"7th";
+            self.pctLabel.text = @"5th";
             
         }else if ([self.teamName isEqualToString:@"Bucks"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x003813);
@@ -291,29 +373,54 @@
             UIImage* image = [UIImage imageNamed: @"bucks.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"12th";
+            self.winsLabel.text = @"5th";
+            self.lossesLabel.text = @"9th";
+            self.pctLabel.text = @"20th";
+            
         }else if ([self.teamName isEqualToString:@"Timberwolves"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0E3764);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x0E3764);
             UIImage* image = [UIImage imageNamed: @"timberwolves.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"20th";
+            self.winsLabel.text = @"14th";
+            self.lossesLabel.text = @"16th";
+            self.pctLabel.text = @"15th";
+            
         }else if ([self.teamName isEqualToString:@"Nets"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x06143F);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x06143F);
-            UIImage* image = [UIImage imageNamed: @"nets.gif"];
+            UIImage* image = [UIImage imageNamed: @"nets.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"17th";
+            self.winsLabel.text = @"10th";
+            self.lossesLabel.text = @"27th";
+            self.pctLabel.text = @"6th";
             
         }else if ([self.teamName isEqualToString:@"Knicks"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x225EA8);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x225EA8);
-            UIImage* image = [UIImage imageNamed: @"knicks.gif"];
+            UIImage* image = [UIImage imageNamed: @"knicks.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"11th";
+            self.winsLabel.text = @"26th";
+            self.lossesLabel.text = @"30th";
+            self.pctLabel.text = @"7th";
             
         }else if ([self.teamName isEqualToString:@"Magic"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0860A8);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x0860A8);
-            UIImage* image = [UIImage imageNamed: @"magic.gif"];
+            UIImage* image = [UIImage imageNamed: @"magic.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"24th";
+            self.winsLabel.text = @"12th";
+            self.lossesLabel.text = @"10th";
+            self.pctLabel.text = @"24th";
             
         }else if ([self.teamName isEqualToString:@"76ers"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
@@ -321,11 +428,21 @@
             UIImage* image = [UIImage imageNamed: @"76ers.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"30th";
+            self.winsLabel.text = @"20th";
+            self.lossesLabel.text = @"11th";
+            self.pctLabel.text = @"9th";
+            
         }else if ([self.teamName isEqualToString:@"Suns"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x23006A);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x23006A);
-            UIImage* image = [UIImage imageNamed: @"suns.gif"];
+            UIImage* image = [UIImage imageNamed: @"suns.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"21st";
+            self.winsLabel.text = @"18th";
+            self.lossesLabel.text = @"14th";
+            self.pctLabel.text = @"26th";
             
         }else if ([self.teamName isEqualToString:@"Kings"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x393996);
@@ -333,29 +450,54 @@
             UIImage* image = [UIImage imageNamed: @"kings.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"10th";
+            self.winsLabel.text = @"25th";
+            self.lossesLabel.text = @"25th";
+            self.pctLabel.text = @"30th";
+            
         }else if ([self.teamName isEqualToString:@"Spurs"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x000000);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x000000);
-            UIImage* image = [UIImage imageNamed: @"spurs.gif"];
+            UIImage* image = [UIImage imageNamed: @"spurs.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"4th";
+            self.winsLabel.text = @"21st";
+            self.lossesLabel.text = @"1st";
+            self.pctLabel.text = @"11th";
             
         }else if ([self.teamName isEqualToString:@"Thunder"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xC67C03);
             self.teamLocationLabel.textColor = UIColorFromRGB(0xC67C03);
-            UIImage* image = [UIImage imageNamed: @"thunder.gif"];
+            UIImage* image = [UIImage imageNamed: @"thunder.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"3rd";
+            self.winsLabel.text = @"6th";
+            self.lossesLabel.text = @"21st";
+            self.pctLabel.text = @"9th";
             
         }else if ([self.teamName isEqualToString:@"Jazz"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x06143F);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x06143F);
-            UIImage* image = [UIImage imageNamed: @"jazz.gif"];
+            UIImage* image = [UIImage imageNamed: @"jazz.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"13th";
+            self.winsLabel.text = @"14th";
+            self.lossesLabel.text = @"13th";
+            self.pctLabel.text = @"15th";
             
         }else if ([self.teamName isEqualToString:@"Wizards"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x0E3764);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x0E3764);
-            UIImage* image = [UIImage imageNamed: @"wizards.gif"];
+            UIImage* image = [UIImage imageNamed: @"wizards.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"28th";
+            self.winsLabel.text = @"9th";
+            self.lossesLabel.text = @"19th";
+            self.pctLabel.text = @"8th";
             
         }else if ([self.teamName isEqualToString:@"Raptors"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xCE0F41);
@@ -363,20 +505,38 @@
             UIImage* image = [UIImage imageNamed: @"raptors.gif"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"16th";
+            self.winsLabel.text = @"28th";
+            self.lossesLabel.text = @"20th";
+            self.pctLabel.text = @"17th";
+            
         }else if ([self.teamName isEqualToString:@"Grizzlies"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0x5D76A8);
             self.teamLocationLabel.textColor = UIColorFromRGB(0x5D76A8);
-            UIImage* image = [UIImage imageNamed: @"grizzlies.gif"];
+            UIImage* image = [UIImage imageNamed: @"grizzlies.png"];
             [self.teamLogo setImage:image];
+            
+            self.standingsLabel.text = @"27th";
+            self.winsLabel.text = @"11th";
+            self.lossesLabel.text = @"24th";
+            self.pctLabel.text = @"1st";
             
         }else if ([self.teamName isEqualToString:@"Bobcats"]) {
             self.teamNameLabel.textColor = UIColorFromRGB(0xFE3310);
             self.teamLocationLabel.textColor = UIColorFromRGB(0xFE3310);
-            UIImage* image = [UIImage imageNamed: @"Bobcats"];
+            UIImage* image = [UIImage imageNamed: @"bobcats.png"];
             [self.teamLogo setImage:image];
             
+            self.standingsLabel.text = @"26th";
+            self.winsLabel.text = @"27th";
+            self.lossesLabel.text = @"29th";
+            self.pctLabel.text = @"29th";
+            
         }
-     
+        [self.ppgLabel setHidden:NO];
+        [self.rpgLabel setHidden:NO];
+        [self.apgLabel setHidden:NO];
+        [self.paLabel setHidden:NO];
 
     }];
 }
@@ -458,6 +618,19 @@
     }];
     
     [operation start];
+    
+//    NSString *jsonEscapeStringTwo = @"%2Fjson";
+//    NSString *searchStringTwo = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/athletes/3419&apikey=%@", espnAPIKey];
+//    
+//    NSURL *url2 = [NSURL URLWithString:searchStringTwo];
+//    NSURLRequest *request2 = [NSURLRequest requestWithURL:url2];
+//    
+//    AFJSONRequestOperation *operation2 = [AFJSONRequestOperation JSONRequestOperationWithRequest:request2 success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+//         NSLog(@"%@", JSON);
+//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+//        NSLog(@"Failure in request two");
+//    }];
+//    [operation2 start];
 }
 
 -(void) espnNews{

@@ -29,6 +29,17 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) IBOutlet UILabel *leagueLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playerNameLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *ppgLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rpgLabel;
+@property (strong, nonatomic) IBOutlet UILabel *apgLabel;
+@property (strong, nonatomic) IBOutlet UILabel *paLabel;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *standingsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *winsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lossesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *pctLabel;
+
 @property (strong, nonatomic) IBOutlet UIButton *playerSearchButton;
 
 @property (strong, nonatomic) NSURLRequest *request;
