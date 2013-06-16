@@ -13,6 +13,7 @@
 #define accountSID @"AC4be7b47606401ee1b19d02fbf90cf503"
 #import "ASIFormDataRequest.h"
 #import "SBJSON.h"
+#define alkKey @"109293217ef79814ce683bcb933f7e41626180de"
 
 @interface MainViewController ()
 
@@ -61,6 +62,9 @@
     [self.playerPERLabel setHidden:YES];
     [self.player3PLabel setHidden:YES];
     [self.playerAPGLabel setHidden:YES];
+    
+    [self.sentimentLabel setHidden:YES];
+    [self.sentimentTitle setHidden:YES];
     
 }
 
@@ -572,6 +576,9 @@
         [self.player3PLabel setHidden:YES];
         [self.playerAPGLabel setHidden:YES];
         
+        [self.sentimentLabel setHidden:YES];
+        [self.sentimentTitle setHidden:YES];
+        
         switchButtonOff = FALSE;
         
     } else if (switchButtonOff == FALSE) {
@@ -591,6 +598,10 @@
         [self.playerPERLabel setHidden:NO];
         [self.player3PLabel setHidden:NO];
         [self.playerAPGLabel setHidden:NO];
+        
+        [self.sentimentLabel setHidden:NO];
+        [self.sentimentTitle setHidden:NO];
+        
         switchButtonOff = TRUE;
     }
     
@@ -611,6 +622,7 @@
         self.playerPERLabel.text = @"32%";
         self.player3PLabel.text = @"33%";
         self.playerRPGLabel.text = @"8";
+        self.sentimentString = @"http://www.nydailynews.com/sports/basketball/heat-shoot-straight-spurs-facing-must-win-article-1.1373894";
         
     } else if ([self.playerName isEqualToString:@"Mario Chalmers"]) {
         self.playerID = @"3419";
@@ -619,6 +631,7 @@
         self.playerPERLabel.text = @"13%";
         self.player3PLabel.text = @"37%";
         self.playerRPGLabel.text = @"2";
+        self.sentimentString = @"http://www.miamiherald.com/2013/06/14/3450608/miami-heats-mario-chalmers-heats.html";
 
         
     } else if ([self.playerName isEqualToString:@"Dwayne Wade"]) {
@@ -628,6 +641,7 @@
         self.playerPERLabel.text = @"24%";
         self.player3PLabel.text = @"28%";
         self.playerRPGLabel.text = @"5";
+        self.sentimentString = @"http://bostonherald.com/sports/celtics_nba/nba_coverage/2013/06/in_tied_nba_finals_wade_says_game_5_could_be_best";
 
         
     } else if ([self.playerName isEqualToString:@"Chris Bosh"]) {
@@ -637,6 +651,7 @@
         self.playerPERLabel.text = @"50%";
         self.player3PLabel.text = @"28%";
         self.playerRPGLabel.text = @"6.8";
+        self.sentimentString = @"http://www.usatoday.com/story/sports/nba/playoffs/2013/06/14/chris-bosh-finals-miami-heat-vs-san-antonio-spurs/2425337/";
 
         
     } else if ([self.playerName isEqualToString:@"Tony Parker"]) {
@@ -646,6 +661,7 @@
         self.playerPERLabel.text = @"23%";
         self.player3PLabel.text = @"31%";
         self.playerRPGLabel.text = @"3";
+        self.sentimentString = @"http://www.usatoday.com/story/sports/nba/spurs/2013/06/15/spurs-parker-sore-hamstring-can-tear-any-time/2426979/";
 
         
     } else if ([self.playerName isEqualToString:@"Tim Duncan"]) {
@@ -655,6 +671,7 @@
         self.playerPERLabel.text = @"50%";
         self.player3PLabel.text = @"18%";
         self.playerRPGLabel.text = @"10";
+        self.sentimentString = @"http://www.usatoday.com/story/sports/nba/playoffs/2013/06/13/tim-duncan-championships-titles-finals-miami-heat-vs-san-antonio-spurs/2420577/";
 
         
     } else if ([self.playerName isEqualToString:@"Kawhi Leonard"]) {
@@ -664,7 +681,7 @@
         self.playerPERLabel.text = @"16%";
         self.player3PLabel.text = @"37%";
         self.playerRPGLabel.text = @"6";
-
+        self.sentimentString = @"http://bleacherreport.com/articles/1672784-what-are-kawhi-leonard-and-danny-greens-pro-ceilings";
     }
 
 
@@ -699,8 +716,35 @@
     }];
     
     [operation start];
+    [self alchemy];
     
     self.playerTextField.text = @"";
+}
+
+- (void)alchemy{
+    
+    NSString *searchString = [NSString stringWithFormat:@"http://access.alchemyapi.com/calls/url/URLGetTextSentiment?apikey=%@&url=%@&outputMode=json",alkKey, self.sentimentString];
+    
+    NSURL *url = [NSURL URLWithString:searchString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        //NSLog(@"%@", JSON);
+        NSDictionary *results = JSON;
+        NSString *sentimentString = [[results objectForKey:@"docSentiment"] objectForKey:@"type"];
+        
+        NSLog(@"sentiment string = %@", sentimentString);
+        
+        self.sentimentLabel.text = sentimentString;
+        
+        
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failure in alchemy search");
+        
+    }];
+    
+    [operation start];
 }
 
 -(void) espnNews{

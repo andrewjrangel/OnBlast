@@ -40,16 +40,14 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) IBOutlet UILabel *label4;
 @property (strong, nonatomic) IBOutlet UILabel *label5;
 
-
-
+@property (strong, nonatomic) IBOutlet UILabel *sentimentTitle;
+@property (strong, nonatomic) IBOutlet UILabel *sentimentLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *playerPPGLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playerRPGLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playerAPGLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playerPERLabel;
 @property (strong, nonatomic) IBOutlet UILabel *player3PLabel;
-
-
 
 @property (strong, nonatomic) IBOutlet UILabel *standingsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *winsLabel;
@@ -81,6 +79,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) NSString *teamAbbreviation;
 @property (strong, nonatomic) NSString *teamLocation;
 @property (strong, nonatomic) NSString *teamName;
+@property (strong, nonatomic) NSString *sentimentString;
+
 
 
 

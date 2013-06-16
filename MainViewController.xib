@@ -116,7 +116,7 @@
 					<object class="IBUILabel" id="748585542">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{564, 204}, {131, 21}}</string>
+						<string key="NSFrame">{{562, 204}, {131, 21}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="68619932"/>
@@ -364,7 +364,7 @@
 						<string key="NSFrame">{{746, 260}, {258, 89}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="538806573"/>
+						<reference key="NSNextKeyView" ref="390131771"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -653,13 +653,13 @@
 						<reference key="IBUIFont" ref="923950362"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="538806573">
+					<object class="IBUILabel" id="390131771">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{29, 452}, {141, 21}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="845066403"/>
+						<reference key="NSNextKeyView" ref="284977493"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -674,13 +674,13 @@
 						<reference key="IBUIFont" ref="767334568"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="419349867">
+					<object class="IBUILabel" id="423920472">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{376, 450}, {158, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="191321435"/>
+						<reference key="NSNextKeyView" ref="659787504"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -695,13 +695,13 @@
 						<reference key="IBUIFont" ref="767334568"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="845066403">
+					<object class="IBUILabel" id="284977493">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{184, 451}, {186, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="419349867"/>
+						<reference key="NSNextKeyView" ref="423920472"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -716,13 +716,13 @@
 						<reference key="IBUIFont" ref="767334568"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="191321435">
+					<object class="IBUILabel" id="659787504">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{564, 451}, {102, 23}}</string>
+						<string key="NSFrame">{{574, 451}, {102, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="512872772"/>
+						<reference key="NSNextKeyView" ref="181839534"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -737,13 +737,13 @@
 						<reference key="IBUIFont" ref="767334568"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="512872772">
+					<object class="IBUILabel" id="181839534">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{723, 451}, {148, 23}}</string>
+						<string key="NSFrame">{{735, 451}, {148, 23}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="645013511"/>
+						<reference key="NSNextKeyView" ref="1047794382"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -758,13 +758,13 @@
 						<reference key="IBUIFont" ref="767334568"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="645013511">
+					<object class="IBUILabel" id="415881154">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{29, 482}, {147, 78}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="466937691"/>
+						<reference key="NSNextKeyView" ref="258719887"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -780,13 +780,13 @@
 						<reference key="IBUIFont" ref="923950362"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="466937691">
+					<object class="IBUILabel" id="258719887">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{184, 482}, {160, 71}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="248425000"/>
+						<reference key="NSNextKeyView" ref="1046652487"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -802,13 +802,13 @@
 						<reference key="IBUIFont" ref="923950362"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="248425000">
+					<object class="IBUILabel" id="1046652487">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{376, 482}, {137, 78}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="432429268"/>
+						<reference key="NSNextKeyView" ref="255605684"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -824,13 +824,13 @@
 						<reference key="IBUIFont" ref="923950362"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="432429268">
+					<object class="IBUILabel" id="255605684">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{564, 482}, {112, 78}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="570362147"/>
+						<reference key="NSNextKeyView" ref="87122629"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -846,10 +846,53 @@
 						<reference key="IBUIFont" ref="923950362"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
-					<object class="IBUILabel" id="570362147">
+					<object class="IBUILabel" id="87122629">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{698, 482}, {135, 78}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="559067876"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText"/>
+						<reference key="IBUITextColor" ref="545757936"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="536164312"/>
+						<reference key="IBUIFont" ref="923950362"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUILabel" id="1047794382">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{879, 450}, {175, 24}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="415881154"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">Sentiment</string>
+						<reference key="IBUITextColor" ref="545757936"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<reference key="IBUIFontDescription" ref="183030171"/>
+						<reference key="IBUIFont" ref="767334568"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUILabel" id="559067876">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{839, 482}, {176, 78}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="628289229"/>
@@ -863,10 +906,10 @@
 						<reference key="IBUITextColor" ref="545757936"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumScaleFactor">0.5</float>
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="536164312"/>
 						<reference key="IBUIFont" ref="923950362"/>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {1024, 748}}</string>
@@ -989,14 +1032,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">standingsLabel</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="68619932"/>
-					</object>
-					<int key="connectionID">82</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">winsLabel</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="794619154"/>
@@ -1055,7 +1090,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playerPPGLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="645013511"/>
+						<reference key="destination" ref="415881154"/>
 					</object>
 					<int key="connectionID">100</int>
 				</object>
@@ -1063,7 +1098,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playerAPGLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="466937691"/>
+						<reference key="destination" ref="258719887"/>
 					</object>
 					<int key="connectionID">101</int>
 				</object>
@@ -1071,7 +1106,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playerRPGLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="248425000"/>
+						<reference key="destination" ref="1046652487"/>
 					</object>
 					<int key="connectionID">102</int>
 				</object>
@@ -1079,7 +1114,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playerPERLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="432429268"/>
+						<reference key="destination" ref="255605684"/>
 					</object>
 					<int key="connectionID">103</int>
 				</object>
@@ -1087,7 +1122,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">player3PLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="570362147"/>
+						<reference key="destination" ref="87122629"/>
 					</object>
 					<int key="connectionID">104</int>
 				</object>
@@ -1095,7 +1130,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">label1</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="538806573"/>
+						<reference key="destination" ref="390131771"/>
 					</object>
 					<int key="connectionID">105</int>
 				</object>
@@ -1103,7 +1138,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">label2</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="419349867"/>
+						<reference key="destination" ref="423920472"/>
 					</object>
 					<int key="connectionID">106</int>
 				</object>
@@ -1111,7 +1146,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">label3</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="845066403"/>
+						<reference key="destination" ref="284977493"/>
 					</object>
 					<int key="connectionID">107</int>
 				</object>
@@ -1119,7 +1154,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">label4</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="191321435"/>
+						<reference key="destination" ref="659787504"/>
 					</object>
 					<int key="connectionID">108</int>
 				</object>
@@ -1127,9 +1162,33 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">label5</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="512872772"/>
+						<reference key="destination" ref="181839534"/>
 					</object>
 					<int key="connectionID">109</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">sentimentTitle</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="1047794382"/>
+					</object>
+					<int key="connectionID">112</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">sentimentLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="559067876"/>
+					</object>
+					<int key="connectionID">114</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">standingsLabel</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="68619932"/>
+					</object>
+					<int key="connectionID">115</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -1216,23 +1275,25 @@
 							<reference ref="628289229"/>
 							<reference ref="220599655"/>
 							<reference ref="132684273"/>
-							<reference ref="748585542"/>
 							<reference ref="389158176"/>
 							<reference ref="68619932"/>
 							<reference ref="794619154"/>
 							<reference ref="672057194"/>
 							<reference ref="282900017"/>
 							<reference ref="360180333"/>
-							<reference ref="845066403"/>
-							<reference ref="419349867"/>
-							<reference ref="191321435"/>
-							<reference ref="512872772"/>
-							<reference ref="538806573"/>
-							<reference ref="570362147"/>
-							<reference ref="432429268"/>
-							<reference ref="248425000"/>
-							<reference ref="466937691"/>
-							<reference ref="645013511"/>
+							<reference ref="284977493"/>
+							<reference ref="423920472"/>
+							<reference ref="659787504"/>
+							<reference ref="181839534"/>
+							<reference ref="390131771"/>
+							<reference ref="87122629"/>
+							<reference ref="255605684"/>
+							<reference ref="1046652487"/>
+							<reference ref="258719887"/>
+							<reference ref="415881154"/>
+							<reference ref="1047794382"/>
+							<reference ref="559067876"/>
+							<reference ref="748585542"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1360,52 +1421,62 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">90</int>
-						<reference key="object" ref="538806573"/>
+						<reference key="object" ref="390131771"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">91</int>
-						<reference key="object" ref="419349867"/>
+						<reference key="object" ref="423920472"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">93</int>
-						<reference key="object" ref="191321435"/>
+						<reference key="object" ref="659787504"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">94</int>
-						<reference key="object" ref="512872772"/>
+						<reference key="object" ref="181839534"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">95</int>
-						<reference key="object" ref="645013511"/>
+						<reference key="object" ref="415881154"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">96</int>
-						<reference key="object" ref="466937691"/>
+						<reference key="object" ref="258719887"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">97</int>
-						<reference key="object" ref="248425000"/>
+						<reference key="object" ref="1046652487"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">98</int>
-						<reference key="object" ref="432429268"/>
+						<reference key="object" ref="255605684"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">99</int>
-						<reference key="object" ref="570362147"/>
+						<reference key="object" ref="87122629"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">92</int>
-						<reference key="object" ref="845066403"/>
+						<reference key="object" ref="284977493"/>
+						<reference key="parent" ref="766721923"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">110</int>
+						<reference key="object" ref="1047794382"/>
+						<reference key="parent" ref="766721923"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">111</int>
+						<reference key="object" ref="559067876"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>
@@ -1416,6 +1487,8 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="110.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="111.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1455,7 +1528,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">109</int>
+			<int key="maxID">115</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1511,6 +1584,8 @@
 						<string key="ppgLabel">UILabel</string>
 						<string key="rpgLabel">UILabel</string>
 						<string key="searchTextField">UITextField</string>
+						<string key="sentimentLabel">UILabel</string>
+						<string key="sentimentTitle">UILabel</string>
 						<string key="standingsLabel">UILabel</string>
 						<string key="switchButton">UIButton</string>
 						<string key="teamAbbreviationLabel">UILabel</string>
@@ -1615,6 +1690,14 @@
 						<object class="IBToOneOutletInfo" key="searchTextField">
 							<string key="name">searchTextField</string>
 							<string key="candidateClassName">UITextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="sentimentLabel">
+							<string key="name">sentimentLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="sentimentTitle">
+							<string key="name">sentimentTitle</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="standingsLabel">
 							<string key="name">standingsLabel</string>
