@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8849A4FB176DB2B00067860E /* basketBallBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8849A4FA176DB2B00067860E /* basketBallBackground.png */; };
+		8849A4FD176DD0530067860E /* OnBlastLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8849A4FC176DD0530067860E /* OnBlastLogo.png */; };
 		88FAB3BF176CB4CF0020FB55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FAB3BE176CB4CF0020FB55 /* UIKit.framework */; };
 		88FAB3C1176CB4CF0020FB55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FAB3C0176CB4CF0020FB55 /* Foundation.framework */; };
 		88FAB3C3176CB4CF0020FB55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FAB3C2176CB4CF0020FB55 /* CoreGraphics.framework */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		8849A4FA176DB2B00067860E /* basketBallBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basketBallBackground.png; sourceTree = "<group>"; };
+		8849A4FC176DD0530067860E /* OnBlastLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnBlastLogo.png; sourceTree = "<group>"; };
 		88FAB3BB176CB4CF0020FB55 /* OnBlast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnBlast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FAB3BE176CB4CF0020FB55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88FAB3C0176CB4CF0020FB55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -352,6 +354,7 @@
 		88FAB4A3176D725E0020FB55 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				8849A4FC176DD0530067860E /* OnBlastLogo.png */,
 				8849A4FA176DB2B00067860E /* basketBallBackground.png */,
 				88FAB4AF176D88EF0020FB55 /* new logos */,
 				88FAB4AD176D7B8F0020FB55 /* OnBlastBackground.png */,
@@ -493,6 +496,7 @@
 				88FAB4E9176D88EF0020FB55 /* wizards.png in Resources */,
 				88FAB4EB176D8B1A0020FB55 /* bobcats.png in Resources */,
 				8849A4FB176DB2B00067860E /* basketBallBackground.png in Resources */,
+				8849A4FD176DD0530067860E /* OnBlastLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
