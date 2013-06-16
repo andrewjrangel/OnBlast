@@ -50,6 +50,18 @@
     [self.apgLabel setHidden:YES];
     [self.paLabel setHidden:YES];
     
+    [self.label1 setHidden:YES];
+    [self.label2 setHidden:YES];
+    [self.label3 setHidden:YES];
+    [self.label4 setHidden:YES];
+    [self.label5 setHidden:YES];
+    
+    [self.playerRPGLabel setHidden:YES];
+    [self.playerPPGLabel setHidden:YES];
+    [self.playerPERLabel setHidden:YES];
+    [self.player3PLabel setHidden:YES];
+    [self.playerAPGLabel setHidden:YES];
+    
 }
 
 
@@ -163,7 +175,7 @@
     [operation start];
    
     
-    
+    self.searchTextField.text = @"";
 }
 
 -(void)test{
@@ -546,31 +558,44 @@
         [self.playerSearchButton setHidden:YES];
         [self.playerTextField setHidden:YES];
         [self.switchButton setTitle:@"Off" forState:UIControlStateNormal];
+        [self.playerNameLabel setHidden:YES];
+        
+        [self.label1 setHidden:YES];
+        [self.label2 setHidden:YES];
+        [self.label3 setHidden:YES];
+        [self.label4 setHidden:YES];
+        [self.label5 setHidden:YES];
+        
+        [self.playerRPGLabel setHidden:YES];
+        [self.playerPPGLabel setHidden:YES];
+        [self.playerPERLabel setHidden:YES];
+        [self.player3PLabel setHidden:YES];
+        [self.playerAPGLabel setHidden:YES];
+        
         switchButtonOff = FALSE;
         
     } else if (switchButtonOff == FALSE) {
         [self.playerSearchButton setHidden:NO];
         [self.playerTextField setHidden:NO];
         [self.switchButton setTitle:@"On" forState:UIControlStateNormal];
+        [self.playerNameLabel setHidden:NO];
+        
+        [self.label1 setHidden:NO];
+        [self.label2 setHidden:NO];
+        [self.label3 setHidden:NO];
+        [self.label4 setHidden:NO];
+        [self.label5 setHidden:NO];
+        
+        [self.playerRPGLabel setHidden:NO];
+        [self.playerPPGLabel setHidden:NO];
+        [self.playerPERLabel setHidden:NO];
+        [self.player3PLabel setHidden:NO];
+        [self.playerAPGLabel setHidden:NO];
         switchButtonOff = TRUE;
     }
     
         
-//        if (fCheck == NO && cCheck == NO) {
-//            [centigradeButton setSelected:YES];
-//            cCheck = TRUE;
-//            [fahrenheitButton setSelected:NO];
-//            fCheck = NO;
-//        } else if (fCheck == TRUE){
-//            [centigradeButton setSelected:YES];
-//            cCheck = TRUE;
-//            [fahrenheitButton setSelected:NO];
-//            fCheck = NO;
-//        } else {
-//            [centigradeButton setSelected:YES];
-//            cCheck = TRUE;
-//            fCheck = NO;
-//        }
+
 }
 
 - (IBAction)playerButtonPressed:(id)sender{
@@ -581,13 +606,69 @@
     
     if ([self.playerName isEqualToString:@"Lebron James"]) {
         self.playerID = @"1966";
+        self.playerPPGLabel.text = @"26.8";
+        self.playerAPGLabel.text = @"7.3";
+        self.playerPERLabel.text = @"32%";
+        self.player3PLabel.text = @"33%";
+        self.playerRPGLabel.text = @"8";
+        
     } else if ([self.playerName isEqualToString:@"Mario Chalmers"]) {
         self.playerID = @"3419";
+        self.playerPPGLabel.text = @"8.6";
+        self.playerAPGLabel.text = @"3.5";
+        self.playerPERLabel.text = @"13%";
+        self.player3PLabel.text = @"37%";
+        self.playerRPGLabel.text = @"2";
+
+        
     } else if ([self.playerName isEqualToString:@"Dwayne Wade"]) {
         self.playerID = @"1987";
+        self.playerPPGLabel.text = @"21.2";
+        self.playerAPGLabel.text = @"5.1";
+        self.playerPERLabel.text = @"24%";
+        self.player3PLabel.text = @"28%";
+        self.playerRPGLabel.text = @"5";
+
+        
     } else if ([self.playerName isEqualToString:@"Chris Bosh"]) {
         self.playerID = @"1977";
+        self.playerPPGLabel.text = @"16.6";
+        self.playerAPGLabel.text = @"1.1";
+        self.playerPERLabel.text = @"50%";
+        self.player3PLabel.text = @"28%";
+        self.playerRPGLabel.text = @"6.8";
+
+        
+    } else if ([self.playerName isEqualToString:@"Tony Parker"]) {
+        self.playerID = @"1015";
+        self.playerPPGLabel.text = @"20.3";
+        self.playerAPGLabel.text = @"7.6";
+        self.playerPERLabel.text = @"23%";
+        self.player3PLabel.text = @"31%";
+        self.playerRPGLabel.text = @"3";
+
+        
+    } else if ([self.playerName isEqualToString:@"Tim Duncan"]) {
+        self.playerID = @"215";
+        self.playerPPGLabel.text = @"17.8";
+        self.playerAPGLabel.text = @"3.1";
+        self.playerPERLabel.text = @"50%";
+        self.player3PLabel.text = @"18%";
+        self.playerRPGLabel.text = @"10";
+
+        
+    } else if ([self.playerName isEqualToString:@"Kawhi Leonard"]) {
+        self.playerID = @"6450";
+        self.playerPPGLabel.text = @"11.9";
+        self.playerAPGLabel.text = @"1.6";
+        self.playerPERLabel.text = @"16%";
+        self.player3PLabel.text = @"37%";
+        self.playerRPGLabel.text = @"6";
+
     }
+
+
+
     
     NSString *jsonEscapeString = @"%2Fjson";
     NSString *searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/athletes/%@?_accept=application%@&apikey=%@",self.playerID, jsonEscapeString, espnAPIKey];
@@ -619,18 +700,7 @@
     
     [operation start];
     
-//    NSString *jsonEscapeStringTwo = @"%2Fjson";
-//    NSString *searchStringTwo = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/athletes/3419&apikey=%@", espnAPIKey];
-//    
-//    NSURL *url2 = [NSURL URLWithString:searchStringTwo];
-//    NSURLRequest *request2 = [NSURLRequest requestWithURL:url2];
-//    
-//    AFJSONRequestOperation *operation2 = [AFJSONRequestOperation JSONRequestOperationWithRequest:request2 success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-//         NSLog(@"%@", JSON);
-//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-//        NSLog(@"Failure in request two");
-//    }];
-//    [operation2 start];
+    self.playerTextField.text = @"";
 }
 
 -(void) espnNews{

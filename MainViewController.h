@@ -34,6 +34,22 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) IBOutlet UILabel *apgLabel;
 @property (strong, nonatomic) IBOutlet UILabel *paLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *label1;
+@property (strong, nonatomic) IBOutlet UILabel *label2;
+@property (strong, nonatomic) IBOutlet UILabel *label3;
+@property (strong, nonatomic) IBOutlet UILabel *label4;
+@property (strong, nonatomic) IBOutlet UILabel *label5;
+
+
+
+
+@property (strong, nonatomic) IBOutlet UILabel *playerPPGLabel;
+@property (strong, nonatomic) IBOutlet UILabel *playerRPGLabel;
+@property (strong, nonatomic) IBOutlet UILabel *playerAPGLabel;
+@property (strong, nonatomic) IBOutlet UILabel *playerPERLabel;
+@property (strong, nonatomic) IBOutlet UILabel *player3PLabel;
+
+
 
 @property (strong, nonatomic) IBOutlet UILabel *standingsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *winsLabel;
