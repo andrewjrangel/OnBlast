@@ -16,6 +16,7 @@
 
 @implementation MainViewController{
     int teamColor;
+    BOOL switchButtonOff;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,14 +32,22 @@
 {
     [super viewDidLoad];
     [self test];
+    [self playerMethod];
+    self.infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [self.infoButton setFrame:CGRectMake(740, 340, 73, 44)];
+    [self.infoButton setBackgroundColor:[UIColor clearColor]];
+    [self.infoButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
+    [self.infoButton addTarget:self action:@selector(espnNews) forControlEvents:UIControlEventTouchUpInside];
+    [self.infoButton setTitle:@"ESPN News" forState:UIControlStateNormal];
+    [self.view addSubview:self.infoButton];
     
-    
-    
+    switchButtonOff = YES;
 }
 
 
 - (IBAction)searchButtonPressed:(id)sender{
     [self.searchTextField resignFirstResponder];
+    
     
     NSString *encodedString = [self.searchTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     if ([encodedString isEqualToString:@"Hawks"]) {
@@ -123,12 +132,10 @@
         self.espnNotesArray = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"] objectForKey:@"notes"] objectForKey:@"href"];
         self.espnTeamsArray = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"api"] objectForKey:@"teams"] objectForKey:@"href"];
         
-        self.espnNewsString = [NSString stringWithFormat:@"%@", self.espnNewsArray];
-        self.espnNotesString = [NSString stringWithFormat:@"%@", self.self.espnNotesArray];
-        self.espnTeamsString = [NSString stringWithFormat:@"%@", self.espnTeamsArray];
+        self.espnNewsString = [[[[[stepThree objectAtIndex:0] objectForKey:@"links"]objectForKey:@"mobile"] objectForKey:@"teams"] objectForKey:@"href"];
         
         
-        NSLog(@"%@", stepThree);
+        //NSLog(@"%@", stepThree);
         
         self.teamColor = [[stepThree objectAtIndex:0]objectForKey:@"color"];
         self.teamLocation = [[stepThree objectAtIndex:0]objectForKey:@"location"];
@@ -155,26 +162,15 @@
 -(void)test{
     NSNotificationCenter *jsonNotification = [NSNotificationCenter defaultCenter];
     [jsonNotification addObserverForName:@"JSONfinished" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-
-        UIButton *btnFaceBook = [UIButton buttonWithType:UIButtonTypeInfoDark];
-        [btnFaceBook setFrame:CGRectMake(800, 500, 280, 30)];
-        [btnFaceBook setBackgroundColor:[UIColor clearColor]];
-        [btnFaceBook.titleLabel setFont:[UIFont boldSystemFontOfSize:16]];
-        [btnFaceBook addTarget:self action:@selector(espnNews) forControlEvents:UIControlEventTouchUpInside];
-        [btnFaceBook setTitle:@"ESPN News" forState:UIControlStateNormal];
-        [self.view addSubview:btnFaceBook];
         
         
-//        NSLog(@"%@", self.teamName);
-//        NSLog(@"%@", self.teamColor);
-//        NSLog(@"%@", self.teamLocation);
+        NSString *combinedString = [self.teamLocation stringByAppendingString:[NSString stringWithFormat:@" %@", self.teamName]];
+        self.teamLocationLabel.text = combinedString;
         
-        self.teamLocationLabel.text = self.teamLocation;
-        self.teamNameLabel.text = self.teamName;
+//        self.teamLocationLabel.text = self.teamLocation;
+//        self.teamNameLabel.text = self.teamName;
         self.teamAbbreviationLabel.text = self.teamAbbreviation;
-        self.linksLabel1.text = self.espnNewsString;
-        self.linksLabel2.text = self.espnNotesString;
-        self.linksLabel3.text = self.espnTeamsString;
+        
         
         
         if ([self.teamName isEqualToString:@"Bucks"]) {
@@ -381,5 +377,72 @@
     }];
 }
 
+- (IBAction)switchButtonPressed:(id)sender{
+    
+    
+}
+
+- (IBAction)playerButtonPressed:(id)sender{
+    [self.playerTextField resignFirstResponder];
+    
+    NSString *encodedString = [self.playerTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.playerName = self.playerTextField.text;
+    
+    if ([self.playerName isEqualToString:@"Lebron James"]) {
+        self.playerID = @"1966";
+    } else if ([self.playerName isEqualToString:@"Mario Chalmers"]) {
+        self.playerID = @"3419";
+    } else if ([self.playerName isEqualToString:@"Dwayne Wade"]) {
+        self.playerID = @"1987";
+    } else if ([self.playerName isEqualToString:@"Chris Bosh"]) {
+        self.playerID = @"1977";
+    }
+    
+    NSString *jsonEscapeString = @"%2Fjson";
+    NSString *searchString = [NSString stringWithFormat:@"http://api.espn.com/v1/sports/basketball/nba/athletes/%@?_accept=application%@&apikey=%@",self.playerID, jsonEscapeString, espnAPIKey];
+    
+    NSURL *url = [NSURL URLWithString:searchString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+       // NSLog(@"%@", JSON);
+        NSDictionary *results = JSON;
+        NSArray *resultsArray = [results objectForKey:@"sports"];
+        NSDictionary *stepOne = [resultsArray objectAtIndex:0];
+        NSArray *stepTwo = [stepOne objectForKey:@"leagues"];
+        NSArray *stepThree = [[stepTwo objectAtIndex:0]objectForKey:@"athletes"];
+        
+        //NSLog(@"%@", stepThree);
+        self.playerName = [[stepThree objectAtIndex:0]objectForKey:@"fullName"];
+        
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"JSON" object:nil];
+        
+        NSLog(@"player name = %@", self.playerName);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Failure in player search");
+        
+        
+
+    }];
+    
+    [operation start];
+}
+
+-(void) espnNews{
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.espnNewsString]];
+}
+-(void)playerMethod{
+    NSNotificationCenter *newNotification = [NSNotificationCenter defaultCenter];
+    [newNotification addObserverForName:@"JSON" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        self.playerNameLabel.text = self.playerName;
+        NSLog(@"player method ran");
+    }];
+
+//        self.playerNameLabel.text = self.playerName;
+//        NSLog(@"Player Method Ran");
+
+
+}
 
 @end

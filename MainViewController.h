@@ -19,16 +19,16 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @property (weak, nonatomic) IBOutlet UIImageView *onBlastLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *teamLogo;
-
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) IBOutlet UIButton *switchButton;
 
 @property (strong, nonatomic) IBOutlet UILabel *teamNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *teamAbbreviationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *leagueLabel;
-@property (strong, nonatomic) IBOutlet UILabel *linksLabel1;
-@property (strong, nonatomic) IBOutlet UILabel *linksLabel2;
-@property (strong, nonatomic) IBOutlet UILabel *linksLabel3;
+@property (strong, nonatomic) IBOutlet UILabel *playerNameLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *playerSearchButton;
 
 @property (strong, nonatomic) NSURLRequest *request;
 @property (strong, nonatomic) NSDictionary *results;
@@ -40,6 +40,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) NSString *espnNewsString;
 @property (strong, nonatomic) NSString *espnNotesString;
 @property (strong, nonatomic) NSString *espnTeamsString;
+@property (strong, nonatomic) NSString *playerName;
+@property (strong, nonatomic) NSString *playerID;
+@property (strong, nonatomic) NSString *UIPlayerName;
+@property (strong, nonatomic) NSString *playerLink;
 
 @property (strong, nonatomic) NSArray *espnNewsArray;
 @property (strong, nonatomic) NSArray *espnNotesArray;
@@ -51,7 +55,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @property (strong, nonatomic) NSString *teamName;
 
 
+
+
 - (IBAction)searchButtonPressed:(id)sender;
 - (IBAction)playerButtonPressed:(id)sender;
-
+- (IBAction)switchButtonPressed:(id)sender;
 @end
